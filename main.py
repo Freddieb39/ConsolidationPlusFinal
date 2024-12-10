@@ -49,6 +49,6 @@ if (scores[player1] >= TARGET_SCORE):
 else:
 	winner = player2
 print(f"\n{winner} wins with a score of {scores[winner]}!")
-with open(FILENAME, "w") as f:
-	f.write("Winner was {winner} with a score of {scores[winner]}")
+with open(FILENAME, "a") as f:
+	f.write(f"Winner was {winner} with a score of {scores[winner]}\n")
 print("Thanks for playing!")
