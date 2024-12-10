@@ -15,6 +15,8 @@ die_tuple = the tuple returned from the roll_dice method holding the user's roll
 Checks to see if all are the same value and if so, returns True, otherwise returns False
 '''
 def is_tupled_out(die_tuple):
+	# Associative property, if a = b and b = c then a = c must be true
+	# This means that they are all equal
 	if die_tuple[0] == die_tuple[1] and die_tuple[0] == die_tuple[2]:
 		return True
 	else:
@@ -29,6 +31,7 @@ def get_fixed(die_tuple):
 	fixed = [False, False, False]
 	for i in range(len(die_tuple)):
 		for j in range(len(die_tuple)):
+			# If you are not looking at the same die and two different die have the same value, they are "fixed"
 			if i != j and die_tuple[i] == die_tuple[j]:
 				fixed[i] = True
 				fixed[j] = True
@@ -41,6 +44,7 @@ Return sum of all dice in the tuple
 '''
 def calculate_points(die_tuple):
 	sum = 0	
+	# Adds all values to sum
 	for i in range(len(die_tuple)):
 		sum += die_tuple[i]
 	return sum
@@ -53,6 +57,7 @@ Return a new tuple of the dice after being rerolled
 '''
 def reroll_dice(die_tuple, fixed):
 	rerolled_die_tuple = [die_tuple[0], die_tuple[1], die_tuple[2]]
+	# Loop through die_tuple and if there are any that are not fixed, they are eligible to be rerolled
 	for i in range(len(die_tuple)):
 		if not fixed[i]:
 			rerolled_die_tuple[i] = random.randint(1, 6)
@@ -60,8 +65,10 @@ def reroll_dice(die_tuple, fixed):
 '''
 @ Parameters
 player_name = the String of the player's name so the method know's who is up currently
-
 Simulates a single turn for a player
+Roll a dice, if they "tuple out", their turn ends with 0 points
+If there are any fixed, they get a chance to reroll non-fixed dice
+When they are satisfied, they can stop their turn
 '''
 def play_turn(player_name):
 	print(f"\n{player_name}'s turn!")
@@ -83,7 +90,7 @@ def play_turn(player_name):
 		else:
 			# Get which dice are fixed
 			fixed = get_fixed(dice) 
-			# If none are fixed print the points the user would get       
+			# If none are fixed print the calculated points the user would get       
 			if (fixed = [False, False, False]):
 				player_points = calculate_points(dice)
 				print(f"This would be {player_points} points")
@@ -101,4 +108,5 @@ def play_turn(player_name):
 		        # Reroll unfixed dice
 				dice = reroll_dice(dice, fixed)
 				print(f"Rolled: {dice}")
+	# Return the users points for that round
 	return points
