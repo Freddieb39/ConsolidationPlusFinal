@@ -3,6 +3,7 @@ from utils import play_turn
 
 # Global variables
 TARGET_SCORE = 50
+FILENAME = "scores.txt"
 
 # Introduction to game
 # Prompt user to enter starting information
@@ -48,4 +49,6 @@ if (scores[player1] >= TARGET_SCORE):
 else:
 	winner = player2
 print(f"\n{winner} wins with a score of {scores[winner]}!")
+with open(FILENAME, "w") as f:
+	f.write("Winner was {winner} with a score of {scores[winner]}")
 print("Thanks for playing!")
