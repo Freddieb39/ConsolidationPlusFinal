@@ -90,11 +90,10 @@ def play_turn(player_name):
 		else:
 			# Get which dice are fixed
 			fixed = get_fixed(dice) 
-			# If none are fixed print the calculated points the user would get       
-			if (fixed = [False, False, False]):
-				player_points = calculate_points(dice)
-				print(f"This would be {player_points} points")
-				points = player_points
+			# If none are fixed print the calculated points the user would get
+			player_points = calculate_points(dice)    
+			print(f"This would be {player_points} points")
+			points = player_points
 			# Prompt user to reroll if they want to
 			decision = input("Do you want to reroll unfixed dice? (y/n): ")
 			# If not rerolling, end the turn and calculate their total points
