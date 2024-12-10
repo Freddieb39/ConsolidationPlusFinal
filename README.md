@@ -26,6 +26,6 @@ reroll the third dice to obtain a possible hand of (1, 1, 6).
 1. Clone or download this repository to your local machine.
    To do so, run `git clone <link_to_repository>`
 2. Open a terminal or command prompt and navigate to the folder containing the script.
-   To do so, run `cd <directory_name>
+   To do so, run `cd <directory_name>`
 3. Run the script using the command:
    `python main.py`
