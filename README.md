@@ -7,6 +7,11 @@ The objective is to score the most points or be the first player to reach a targ
 The game introduces strategic decisions: players can reroll unfixed dice to improve their score but risk "tupling out" (rolling three identical numbers), 
 which results in scoring zero for that turn.
 
+## FAQ
+- **What is a fixed dice:** Fixed dice are when out of the three dice rolled, two are the same value. For example, if player 1 rolled
+a (1, 1, 3) for their turn. Then dice one and two would be "fixed" and not be allowed to be rerolled. However, the user could choose to
+reroll the third dice to obtain a possible hand of (1, 1, 6).
+
 ## Features
 - **Two-player mode:** Players alternate turns until one reaches the target score.
 - **Dynamic gameplay:** Players can choose to reroll unfixed dice or stop to secure their current points.
